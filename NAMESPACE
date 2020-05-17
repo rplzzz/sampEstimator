@@ -2,3 +2,5 @@
 
 export(pnetfn)
 export(pnpos)
+importFrom(stats,dbinom)
+importFrom(stats,dhyper)

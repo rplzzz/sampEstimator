@@ -21,6 +21,7 @@
 #' @param delta The number of net false negatives
 #' @param phi Sensitivity (true positive rate) of the test.
 #' @param eta Specificity (true negative rate) of the test.
+#' @importFrom stats dbinom
 #' @export
 pnetfn <- function(k, kpos, delta, phi, eta)
 {
@@ -70,6 +71,7 @@ pnetfn <- function(k, kpos, delta, phi, eta)
 #' @param Npop Total population
 #' @param phi Test sensitivity
 #' @param eta Test specificity
+#' @importFrom stats dhyper
 #' @export
 pnpos <- function(k, p, npos, Npop, phi, eta)
 {
