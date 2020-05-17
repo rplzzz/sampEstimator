@@ -36,3 +36,8 @@ to \eqn{m-n}.  Therefore,
 We allow the user to specify an arbitrary population prevalence; it will be
 rounded to integer population counts.
 }
+\section{TODO}{
+
+This function should really be called \code{dnpos}
+}
+

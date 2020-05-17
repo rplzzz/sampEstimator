@@ -140,3 +140,18 @@ test_that('pnpos gives correct answers',{
   }
   
 })
+
+test_that('qnpos gives the correct answers',{
+  k <- 10
+  prev <- 0.4
+  Npop <- 100
+  i <- seq(0,10)
+  cprobiperf <- cumsum(sapply(i, function(i) {pnpos(k, prev, i, Npop, 1, 1)}))
+  cprobiimperf <- cumsum(sapply(i, function(i) {pnpos(k, prev, i, Npop, 0.8, 0.8)}))
+  
+  ps <- seq(0.05, 0.95, 0.05)
+  for(p in ps) {
+    expect_equal(qnpos(p, k, prev, Npop, 1, 1), i[min(which(cprobiperf >= p))])
+    expect_equal(qnpos(p, k, prev, Npop, 0.8, 0.8), i[min(which(cprobiimperf >= p))])
+  }
+})

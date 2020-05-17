@@ -65,6 +65,9 @@ pnetfn <- function(k, kpos, delta, phi, eta)
 #' We allow the user to specify an arbitrary population prevalence; it will be
 #' rounded to integer population counts.  
 #' 
+#' @section TODO:
+#' This function should really be called \code{dnpos}
+#' 
 #' @param k Sample size
 #' @param p Population prevalence
 #' @param npos Target number of positive observations
@@ -86,4 +89,32 @@ pnpos <- function(k, p, npos, Npop, phi, eta)
                         pnetfn(k, i, i-npos, phi, eta)
                       })
   sum(probihyper * probdelta)
+}
+
+#' Find a quantile of the distribution of positive measurements
+#' 
+#' For the probability density defined in \code{\link{pnpos}}, find a quantile.
+#' The quantile is defined as the smallest \eqn{k_{pos}} such that 
+#' \eqn{\sum_{i=0}^{k_{pos}} dnpos(k_{pos}) \ge p}, for some specified p.
+#' 
+#' Since we don't have a good way to calculate the sum in the definition, other
+#' than by iterating over the terms, we don't bother with a secant search or 
+#' anything like that; we just keep summing until we get there.
+#' 
+#' @param p Probability of the quantile being sought
+#' @param k Sample size
+#' @param popprev Population prevalence
+#' @param Npop Total population
+#' @param phi Test sensitivity
+#' @param eta Test specificity
+#' @export 
+qnpos <- function(p, k, popprev, Npop, phi, eta)
+{
+  sp <- 0
+  kpos <- -1
+  while(sp < p) {
+    kpos <- kpos + 1
+    sp <- sp + pnpos(k, popprev, kpos, Npop, phi, eta)
+  }
+  kpos
 }
