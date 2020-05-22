@@ -1,11 +1,11 @@
 Package: sampEstimator
-Title: Estimate sample sizes for reliable detection with an imperfect test
+Title: Estimate Sample Sizes for Reliable Detection with an Imperfect Test
 Version: 0.0.1.9000
 Authors@R: 
     person(given = "Robert",
            family = "Link",
            role = c("aut", "cre", "ard"),
-           email = "rliz@virginia.edu",
+           email = "rl8z@virginia.edu",
            comment = c(ORCID = "0000-0002-7071-248X"))
 Description: 
     Estimate the sample size required to reliably detect the spread of a disease
