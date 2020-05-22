@@ -8,7 +8,7 @@
 #' that the net false negatives equal a specified value.
 #' 
 #' This probability can be calculated in terms of the probability mass function
-#' for the binomial distribution, \eqn{\rho_{bn}} (\code{\link[stats]{dbinom}} in
+#' for the binomial distribution, \eqn{\rho_{bn}} (\code{\link[stats:Binomial]{dbinom}} in
 #' R-lingo).
 #' \deqn{P(NFN = \delta) = \sum_{j=0}^{k} \rho_{bn}(j, k, 1-\phi) \rho_{bn}(j-\delta, k, 1-\eta),}
 #' where \eqn{\phi} is the sensitivity of the test and \eqn{\eta} is the specificity.
@@ -56,7 +56,7 @@ pnetfn <- function(k, kpos, delta, phi, eta)
 #' 
 #' The probability of observing X positive results is given by the probability
 #' mass function for the hypergeometric distribution, \eqn{\rho_H}, which is
-#' calculated with \code{\link[stats]{dhyper}}.  The correction for test errors
+#' calculated with \code{\link[stats:Hypergeometric]{dhyper}}.  The correction for test errors
 #' is calculated with \code{\link{pnetfn}}.  You get \eqn{n} positives if there
 #' were \eqn{m} positives in your sample, and the net false negatives were equal
 #' to \eqn{m-n}.  Therefore,

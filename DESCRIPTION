@@ -1,6 +1,6 @@
 Package: sampEstimator
 Title: Estimate sample sizes for reliable detection with an imperfect test
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: 
     person(given = "Robert",
            family = "Link",

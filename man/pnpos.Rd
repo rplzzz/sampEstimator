@@ -27,7 +27,7 @@ for the test.
 \details{
 The probability of observing X positive results is given by the probability
 mass function for the hypergeometric distribution, \eqn{\rho_H}, which is
-calculated with \code{\link[stats]{dhyper}}.  The correction for test errors
+calculated with \code{\link[stats:Hypergeometric]{dhyper}}.  The correction for test errors
 is calculated with \code{\link{pnetfn}}.  You get \eqn{n} positives if there
 were \eqn{m} positives in your sample, and the net false negatives were equal
 to \eqn{m-n}.  Therefore,

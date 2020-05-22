@@ -3,5 +3,6 @@
 export(pnetfn)
 export(pnpos)
 export(qnpos)
+export(sampEstimate)
 importFrom(stats,dbinom)
 importFrom(stats,dhyper)
